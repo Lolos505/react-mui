@@ -199,7 +199,7 @@ function Configurator() {
           </SoftBox>
           <SoftButton
             component={Link}
-            href=""
+            href="https://github.com/Lolos505/react-mui"
             target="_blank"
             rel="noreferrer"
             color="dark"
