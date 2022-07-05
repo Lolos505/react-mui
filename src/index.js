@@ -10,11 +10,11 @@ import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <SoftUIControllerProvider>
-      <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
+      <SoftUIControllerProvider>
         <App />
-      </Provider>
-    </SoftUIControllerProvider>
-  </BrowserRouter>
+      </SoftUIControllerProvider>
+    </BrowserRouter>
+  </Provider>
 );

@@ -32,6 +32,7 @@ import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "contex
 
 // Images
 import brand from "assets/images/logo-ct.png";
+import SingleDrink from "layouts/dashboard/components/SingleDrinkPage/";
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
@@ -161,6 +162,7 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="/cocktail/:id" element={<SingleDrink />} />
       </Routes>
     </ThemeProvider>
   );
