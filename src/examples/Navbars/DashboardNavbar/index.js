@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { fetchSearchCocktail } from "../../../layouts/dashboard/redux/action";
+import "./styles.css";
 
 // react-router components
 import { useLocation, Link } from "react-router-dom";
@@ -16,7 +19,6 @@ import Icon from "@mui/material/Icon";
 // Dashboard components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
-import SoftInput from "components/SoftInput";
 
 // Dashboard examples
 import Breadcrumbs from "examples/Breadcrumbs";
@@ -42,14 +44,24 @@ import {
 // Images
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import SearchBar from "./SearchBar";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
-  const [controller, dispatch] = useSoftUIController();
+  const [controller, dispatched] = useSoftUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+
+  const searchValue = useRef();
+
+  let dispatch = useDispatch();
+  const searchCocktail = () => {
+    dispatch(fetchSearchCocktail(searchValue.current.value));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   useEffect(() => {
     // Setting the navbar type
@@ -61,7 +73,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
     // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
-      setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
+      setTransparentNavbar(dispatched, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
     }
 
     /** 
@@ -75,10 +87,10 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
     // Remove event listener on cleanup
     return () => window.removeEventListener("scroll", handleTransparentNavbar);
-  }, [dispatch, fixedNavbar]);
+  }, [dispatched, fixedNavbar]);
 
-  const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleMiniSidenav = () => setMiniSidenav(dispatched, !miniSidenav);
+  const handleConfiguratorOpen = () => setOpenConfigurator(dispatched, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
 
@@ -97,7 +109,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
     >
       <NotificationItem
         image={<img src={team2} alt="person" />}
-        title={["New message", "from Laur"]}
+        title={["New message", "from Giannis"]}
         date="13 minutes ago"
         onClick={handleCloseMenu}
       />
@@ -114,7 +126,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
             payment
           </Icon>
         }
-        title={["", "Payment successfully completed"]}
+        title={["Subscription", "Expires in 2 days"]}
         date="2 days"
         onClick={handleCloseMenu}
       />
@@ -133,7 +145,19 @@ function DashboardNavbar({ absolute, light, isMini }) {
         </SoftBox>
         {isMini ? null : (
           <SoftBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <SearchBar />
+            <SoftBox pr={1}>
+              <div className="search-container" onSubmit={handleSubmit}>
+                <input
+                  className="search"
+                  type="text"
+                  id="name"
+                  name="name"
+                  onChange={searchCocktail}
+                  ref={searchValue}
+                  placeholder="Search Cocktail..."
+                />
+              </div>
+            </SoftBox>
             <SoftBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in">
                 <IconButton sx={navbarIconButton} size="small">

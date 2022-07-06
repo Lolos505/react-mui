@@ -1,0 +1,14 @@
+.search {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  width: 69px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease;
+  font-size: medium;
+ }
+ .search:focus {
+  width: 200px;
+}
+

@@ -1,16 +1,15 @@
 import React from "react";
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia } from "@mui/material";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./styles.css";
-import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import { Box } from "@mui/system";
 
 const MuiCard = ({ image, category, title, glass, instructions, to, label }) => {
   return (
-    <Box sx={{ width: "300px", height: "430px", borderRadius: "20px" }}>
-      <Card className="card" sx={{ height: "430px", width: "300px" }}>
+    <Box sx={{ width: "300px", height: "450px", borderRadius: "20px" }}>
+      <Card className="card" sx={{ height: "450px", width: "300px" }}>
         <CardMedia component="img" image={image} sx={{ height: "200px" }} />
         <CardContent>
           <SoftTypography variant="h4">{title}</SoftTypography>
