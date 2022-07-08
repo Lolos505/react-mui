@@ -1,7 +1,7 @@
 // Dashboard layouts
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
-import Billing from "layouts/favourites";
+import Favourites from "layouts/favourites";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
@@ -39,7 +39,7 @@ const routes = [
     key: "favourites",
     route: "/favourites",
     icon: <CreditCard size="12px" />,
-    component: <Billing />,
+    component: <Favourites />,
     noCollapse: true,
   },
   { type: "title", title: "Account Pages", key: "account-pages" },

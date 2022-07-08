@@ -58,7 +58,7 @@ const CardList = () => {
   }
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
       {modifiedCocktail.slice(0, 24).map((item) => {
         const { id, name, image, glass, category, instructions } = item;
         return (

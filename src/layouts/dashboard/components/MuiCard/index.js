@@ -32,13 +32,13 @@ const MuiCard = ({ image, category, title, glass, instructions, to, label }) => 
 };
 
 MuiCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  glass: PropTypes.string.isRequired,
-  instructions: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  category: PropTypes.string,
+  title: PropTypes.string,
+  glass: PropTypes.string,
+  instructions: PropTypes.string,
+  to: PropTypes.string,
+  label: PropTypes.string,
 };
 
 export default MuiCard;

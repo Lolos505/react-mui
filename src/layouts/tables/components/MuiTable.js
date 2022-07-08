@@ -3,9 +3,6 @@ import MaterialTable from "material-table";
 import SoftAvatar from "components/SoftAvatar";
 import SoftBox from "components/SoftBox";
 import data from "../data/data.json";
-import { Button } from "@mui/material";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function MuiTable() {
   const [tableData] = useState(data);
@@ -52,13 +49,6 @@ function MuiTable() {
           columnsButton: true,
           cellStyle: { fontSize: "medium" },
         }}
-        actions={[
-          {
-            icon: () => <Button variant="text">Add</Button>,
-            tooltip: "Add drink to favourites",
-            onClick: (e, data) => console.log(data),
-          },
-        ]}
         columns={columns}
         data={tableData}
         title="Drinks Table"

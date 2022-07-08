@@ -10,6 +10,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import SoftButton from "components/SoftButton";
 import { styled } from "@mui/material/styles";
+import Footer from "examples/Footer";
 
 const SingleDrink = () => {
   const { cocktail, loading } = useSelector((state) => ({ ...state.data }));
@@ -73,43 +74,42 @@ const SingleDrink = () => {
     return (
       <>
         {loading ? (
-          <SoftBox align="center">
+          <SoftBox>
             <SoftTypography variant="body2">Loading...</SoftTypography>
           </SoftBox>
         ) : (
           <DashboardLayout>
             <DashboardNavbar />
-            <SoftBox elevation={4} justifyContent="center">
-              <Grid>
-                <Card sx={{ maxHeight: 1200, maxWidth: 900 }}>
-                  <CardMedia component="img" image={image} sx={{ maxHeight: 500, maxWidth: 900 }} />
-                  <CardContent sx={{ display: "flex" }}>
-                    <SoftTypography variant="h5">
-                      <Div>Drink Name:</Div>
-                      {name}
-                      <Div>Category:</Div>
-                      {category}
-                      <Div>Glass:</Div>
-                      {glass}
-                    </SoftTypography>
-                    <SoftTypography variant="h6" sx={{ ml: 3 }}>
-                      <Div>Instructions:</Div>
-                      {instructions}
+            <Grid container justifyContent="center" sx={{ mt: 4, mb: 4 }}>
+              <Card sx={{ maxHeight: 1200, maxWidth: 900 }}>
+                <CardMedia component="img" image={image} sx={{ maxHeight: 500, maxWidth: 900 }} />
+                <CardContent sx={{ display: "flex" }}>
+                  <SoftTypography variant="h5">
+                    <Div>Drink Name:</Div>
+                    {name}
+                    <Div>Category:</Div>
+                    {category}
+                    <Div>Glass:</Div>
+                    {glass}
+                  </SoftTypography>
+                  <SoftTypography variant="h6" sx={{ ml: 3 }}>
+                    <Div>Instructions:</Div>
+                    {instructions}
 
-                      <Div>Ingredients: </Div>
-                      {ingredients.map((item, index) => {
-                        return item ? <span key={index}>{(index ? ", " : "") + item}</span> : null;
-                      })}
-                    </SoftTypography>
-                  </CardContent>
-                  <CardActions sx={{ justifyContent: "center", mb: 2 }}>
-                    <Link to="/">
-                      <SoftButton>Go Back</SoftButton>
-                    </Link>
-                  </CardActions>
-                </Card>
-              </Grid>
-            </SoftBox>
+                    <Div>Ingredients: </Div>
+                    {ingredients.map((item, index) => {
+                      return item ? <span key={index}>{(index ? ", " : "") + item}</span> : null;
+                    })}
+                  </SoftTypography>
+                </CardContent>
+                <CardActions sx={{ justifyContent: "center", mb: 2 }}>
+                  <Link to="/">
+                    <SoftButton>Go Back</SoftButton>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Footer />
           </DashboardLayout>
         )}
       </>

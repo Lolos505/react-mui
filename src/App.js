@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { GlobalProvider } from "layouts/favourites/redux/GlobalState";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -102,27 +103,29 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={brand}
-            brandName="Drink Buddy"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {configsButton}
-        </>
-      )}
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
-        <Route path="/cocktail/:id" element={<SingleDrink />} />
-      </Routes>
-    </ThemeProvider>
+    <GlobalProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {layout === "dashboard" && (
+          <>
+            <Sidenav
+              color={sidenavColor}
+              brand={brand}
+              brandName="Drink Buddy"
+              routes={routes}
+              onMouseEnter={handleOnMouseEnter}
+              onMouseLeave={handleOnMouseLeave}
+            />
+            <Configurator />
+            {configsButton}
+          </>
+        )}
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="/cocktail/:id" element={<SingleDrink />} />
+        </Routes>
+      </ThemeProvider>
+    </GlobalProvider>
   );
 }
