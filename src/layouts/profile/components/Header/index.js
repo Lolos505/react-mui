@@ -1,29 +1,11 @@
 import { useState, useEffect } from "react";
-
-// @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-
-// Dashboard components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftAvatar from "components/SoftAvatar";
-
-// Dashboard examples
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-
-// Dashboard icons
-import Cube from "examples/Icons/Cube";
-import Document from "examples/Icons/Document";
-import Settings from "examples/Icons/Settings";
-
-// Dashboard base styles
 import breakpoints from "assets/theme/base/breakpoints";
-
-// Images
 import theogriv from "assets/images/theo-griv.jpg";
 import curved0 from "assets/images/curved-images/curved0.jpg";
 
@@ -104,20 +86,6 @@ function Header() {
                 Software Engineer / Web Developer
               </SoftTypography>
             </SoftBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
-            <AppBar position="static">
-              <Tabs
-                orientation={tabsOrientation}
-                value={tabValue}
-                onChange={handleSetTabValue}
-                sx={{ background: "transparent" }}
-              >
-                <Tab label="App" icon={<Cube />} />
-                <Tab label="Messages" icon={<Document />} />
-                <Tab label="Settings" icon={<Settings />} />
-              </Tabs>
-            </AppBar>
           </Grid>
         </Grid>
       </Card>

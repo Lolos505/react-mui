@@ -21,9 +21,6 @@ import PlaceholderCard from "examples/Cards/PlaceholderCard";
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 
-// Data
-import profilesListData from "layouts/profile/data/profilesListData";
-
 // Images
 import website1 from "assets/images/1.jpg";
 import website2 from "assets/images/2.jpg";
@@ -45,7 +42,7 @@ function Overview() {
           <Grid item xs={12} md={6} xl={4}>
             <ProfileInfoCard
               title="profile information"
-              description="Hi, I’m Theodoros Grivas, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Hi, I’m Theodoros! Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
               info={{
                 fullName: "Theodoros E. Grivas",
                 mobile: "(+30) 694 2275 742",
@@ -63,7 +60,7 @@ function Overview() {
             />
           </Grid>
           <Grid item xs={12} xl={4}>
-            <ProfilesList title="conversations" profiles={profilesListData} />
+            <ProfilesList />
           </Grid>
         </Grid>
       </SoftBox>
@@ -95,12 +92,6 @@ function Overview() {
                     color: "info",
                     label: "view project",
                   }}
-                  authors={[
-                    { image: team1, name: "Elena" },
-                    { image: team2, name: "Giannis" },
-                    { image: team3, name: "Nikos" },
-                    { image: team4, name: "Iakovos" },
-                  ]}
                 />
               </Grid>
               <Grid item xs={12} md={6} xl={3}>
@@ -115,12 +106,6 @@ function Overview() {
                     color: "info",
                     label: "view project",
                   }}
-                  authors={[
-                    { image: team3, name: "Nikos" },
-                    { image: team4, name: "Iakovos" },
-                    { image: team1, name: "Elena" },
-                    { image: team2, name: "Giannis" },
-                  ]}
                 />
               </Grid>
               <Grid item xs={12} md={6} xl={3}>
@@ -135,12 +120,6 @@ function Overview() {
                     color: "info",
                     label: "view project",
                   }}
-                  authors={[
-                    { image: team4, name: "Iakovos" },
-                    { image: team3, name: "Nikos" },
-                    { image: team2, name: "Giannis" },
-                    { image: team1, name: "Elena" },
-                  ]}
                 />
               </Grid>
               <Grid item xs={12} md={6} xl={3}>

@@ -1,7 +1,8 @@
-import { Grid } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 import { ResultCard } from "./ResultCard";
 import SoftInput from "components/SoftInput";
 import React, { useState } from "react";
+import SoftBox from "components/SoftBox";
 
 const SearchInput = () => {
   const [query, setQuery] = useState("");
@@ -22,20 +23,29 @@ const SearchInput = () => {
   };
 
   return (
-    <Grid container justifyContent="center">
-      <Grid item sx={{ mt: 1, mb: 5 }}>
-        <SoftInput type="text" placeholder="Search for a drink" onChange={onChange} value={query} />
-      </Grid>
-      {drinks.length > 0 && (
-        <Grid container justifyContent="center" spacing={4}>
-          {drinks.map((drink) => (
-            <Grid item key={drink.idDrink}>
-              <ResultCard drink={drink} />
+    <Card sx={{ mt: 3 }}>
+      <SoftBox sx={{ pl: 3, pr: 3, pt: 3, pb: 3 }}>
+        <Grid container justifyContent="center">
+          <Grid item>
+            <SoftInput
+              type="text"
+              placeholder="Search for a drink"
+              onChange={onChange}
+              value={query}
+            />
+          </Grid>
+          {drinks.length > 0 && (
+            <Grid container justifyContent="center" spacing={4} sx={{ mt: 3 }}>
+              {drinks.map((drink) => (
+                <Grid item key={drink.idDrink}>
+                  <ResultCard drink={drink} />
+                </Grid>
+              ))}
             </Grid>
-          ))}
+          )}
         </Grid>
-      )}
-    </Grid>
+      </SoftBox>
+    </Card>
   );
 };
 

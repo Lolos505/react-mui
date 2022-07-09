@@ -4,8 +4,9 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import MuiTable from "./components/MuiTable";
 import SearchInput from "./components/SearchInput";
-import { Grid } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 import SearchHeader from "./components/SearchHeader";
+import PieChart from "./components/PieChart";
 
 function Tables() {
   return (
@@ -19,7 +20,20 @@ function Tables() {
               <SearchInput />
             </Grid>
           </Grid>
-          <MuiTable />
+          <SoftBox sx={{ mb: 3, width: "400px" }}>
+            <Card>
+              <Grid container justifyContent="left">
+                <Grid item sx={{ width: "400px", height: "500px" }}>
+                  <PieChart />
+                </Grid>
+              </Grid>
+            </Card>
+          </SoftBox>
+          <SoftBox>
+            <Card>
+              <MuiTable />
+            </Card>
+          </SoftBox>
         </SoftBox>
       </SoftBox>
       <Footer />
