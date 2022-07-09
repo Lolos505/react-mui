@@ -45,15 +45,17 @@ const CardList = () => {
 
   if (!cocktails) {
     return (
-      <SoftBox
-        sx={{
-          backgroundImage: `url(${Image})`,
-          width: "774px",
-          height: "529px",
-          backgroundColor: "transparent",
-          boxShadow: "0",
-        }}
-      />
+      <Grid container justifyContent="center">
+        <SoftBox
+          sx={{
+            backgroundImage: `url(${Image})`,
+            width: "774px",
+            height: "529px",
+            backgroundColor: "transparent",
+            boxShadow: "0",
+          }}
+        />
+      </Grid>
     );
   }
 
