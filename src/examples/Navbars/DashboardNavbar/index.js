@@ -109,7 +109,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   name="name"
                   onChange={searchCocktail}
                   ref={searchValue}
-                  placeholder="Search Cocktail..."
+                  placeholder="Search for a drink..."
                 />
               </div>
             </SoftBox>
