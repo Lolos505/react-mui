@@ -2,27 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { fetchSearchCocktail } from "../../../layouts/dashboard/redux/action";
 import "./styles.css";
-
-// react-router components
 import { useLocation, Link } from "react-router-dom";
-
-// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
-
-// @material-ui core components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Icon from "@mui/material/Icon";
-
-// Dashboard components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
-
-// Dashboard examples
 import Breadcrumbs from "examples/Breadcrumbs";
-
-// Custom styles for DashboardNavbar
 import {
   navbar,
   navbarContainer,
@@ -30,8 +18,6 @@ import {
   navbarIconButton,
   navbarMobileMenu,
 } from "examples/Navbars/DashboardNavbar/styles";
-
-// Dashboard context
 import {
   useSoftUIController,
   setTransparentNavbar,

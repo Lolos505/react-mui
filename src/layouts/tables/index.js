@@ -6,7 +6,7 @@ import MuiTable from "./components/MuiTable";
 import SearchInput from "./components/SearchInput";
 import { Card, Grid } from "@mui/material";
 import SearchHeader from "./components/SearchHeader";
-import PieChart from "./components/PieChart";
+import ChartPie from "./components/ChartPie";
 
 function Tables() {
   return (
@@ -24,7 +24,7 @@ function Tables() {
             <Card>
               <Grid container justifyContent="left">
                 <Grid item sx={{ width: "400px", height: "500px" }}>
-                  <PieChart />
+                  <ChartPie />
                 </Grid>
               </Grid>
             </Card>

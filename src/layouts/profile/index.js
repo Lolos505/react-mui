@@ -25,10 +25,6 @@ import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import website1 from "assets/images/1.jpg";
 import website2 from "assets/images/2.jpg";
 import website3 from "assets/images/3.png";
-import team1 from "assets/images/team-1.jpg";
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
 
 function Overview() {
   return (

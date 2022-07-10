@@ -5,7 +5,7 @@ import SoftTypography from "components/SoftTypography";
 import SoftBox from "components/SoftBox";
 import { Grid } from "@mui/material";
 
-function PieChart() {
+function ChartPie() {
   const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
@@ -54,4 +54,4 @@ function PieChart() {
   );
 }
 
-export default PieChart;
+export default ChartPie;
