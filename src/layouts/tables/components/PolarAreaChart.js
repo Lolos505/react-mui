@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Pie } from "react-chartjs-2";
+import { PolarArea } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import SoftTypography from "components/SoftTypography";
 import SoftBox from "components/SoftBox";
 import { Grid } from "@mui/material";
 
-function ChartPie() {
+function PolarAreaChart() {
   const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function ChartPie() {
   }, []);
 
   const data = {
-    labels: drinks?.drinks?.map((drink) => drink.strCategory),
+    labels: drinks?.drinks?.map((drink) => drink.strGlass),
     datasets: [
       {
         label: `${drinks?.drinks?.length} Categories`,
@@ -47,11 +47,11 @@ function ChartPie() {
   return (
     <SoftBox>
       <Grid container justifyContent="center" sx={{ mt: 4 }}>
-        <SoftTypography sx={{ mb: 3, color: "#58bde5" }}>Pie Chart</SoftTypography>
-        <Pie data={data} />
+        <SoftTypography sx={{ mb: 3, color: "#58bde5" }}>Polar Area Chart</SoftTypography>
+        <PolarArea data={data} />
       </Grid>
     </SoftBox>
   );
 }
 
-export default ChartPie;
+export default PolarAreaChart;

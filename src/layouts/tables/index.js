@@ -7,6 +7,9 @@ import SearchInput from "./components/SearchInput";
 import { Card, Grid } from "@mui/material";
 import SearchHeader from "./components/SearchHeader";
 import ChartPie from "./components/ChartPie";
+import DoughnutChart from "./components/DoughnutChart";
+import PolarAreaChart from "./components/PolarAreaChart";
+import RadarChart from "./components/RadarChart";
 
 function Tables() {
   return (
@@ -20,15 +23,36 @@ function Tables() {
               <SearchInput />
             </Grid>
           </Grid>
-          <SoftBox sx={{ mb: 3, width: "400px" }}>
-            <Card>
-              <Grid container justifyContent="left">
-                <Grid item sx={{ width: "400px", height: "500px" }}>
+          <Grid container justifyContent="space-evenly">
+            <SoftBox sx={{ mb: 3, width: "400px" }}>
+              <Card>
+                <Grid item>
                   <ChartPie />
                 </Grid>
-              </Grid>
-            </Card>
-          </SoftBox>
+              </Card>
+            </SoftBox>
+            <SoftBox sx={{ mb: 3, width: "400px" }}>
+              <Card>
+                <Grid item>
+                  <DoughnutChart />
+                </Grid>
+              </Card>
+            </SoftBox>
+            <SoftBox sx={{ mb: 3, width: "400px" }}>
+              <Card sx={{ height: "490px" }}>
+                <Grid item>
+                  <PolarAreaChart />
+                </Grid>
+              </Card>
+            </SoftBox>
+            <SoftBox sx={{ mb: 3, width: "400px" }}>
+              <Card sx={{ height: "490px" }}>
+                <Grid item>
+                  <RadarChart />
+                </Grid>
+              </Card>
+            </SoftBox>
+          </Grid>
           <SoftBox>
             <Card>
               <MuiTable />
